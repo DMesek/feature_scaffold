@@ -1,0 +1,11 @@
+import 'package:flutter_architecture/flutter_architecture.dart';
+
+import 'package:{{project_name.snakeCase()}}/features/{{feature_name.snakeCase()}}/domain/services/{{service_name.snakeCase()}}_service.dart';
+
+class {{service_name.pascalCase()}}ServiceImpl implements {{service_name.pascalCase()}}Service{
+
+  {{service_name.pascalCase()}}ServiceImpl();
+
+  EitherFailureOr<String> function() async => throw UnimplementedError();
+  
+}

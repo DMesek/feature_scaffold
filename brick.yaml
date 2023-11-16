@@ -1,0 +1,37 @@
+name: feature_scaffold
+description: A brick to produce simple feature scaffold
+version: 0.0.1
+
+environment:
+  mason: ">=0.1.0-dev.51 <0.1.0"
+
+vars:
+  project_name:
+    type: string
+    description: Name of your project
+    default: myapp
+    prompt: What is your project name?
+
+  feature_name:
+    type: string
+    description: Name of your feature
+    prompt: What is your feature name?
+
+  entity_name:
+    type: string
+    description: Name of your entity
+    prompt: What is your entity name?
+
+  with_service_layer:
+    type: boolean
+    description: Should generate services layer
+    default: false
+    prompt: Do you need a services layer?
+
+  service_name:
+    type: string
+    description: Name of your service
+    default: Service
+    prompt: What is your service name?
+
+  

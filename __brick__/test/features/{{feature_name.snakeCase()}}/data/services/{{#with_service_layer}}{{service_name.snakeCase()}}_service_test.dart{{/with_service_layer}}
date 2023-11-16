@@ -1,0 +1,14 @@
+//ignore_for_file: prefer-match-file-name
+import 'package:flutter_test/flutter_test.dart';
+import 'package:mocktail/mocktail.dart';
+
+import 'package:{{project_name.snakeCase()}}/features/{{feature_name.snakeCase()}}/data/services/{{service_name.snakeCase()}}_service_impl.dart';
+import 'package:{{project_name.snakeCase()}}/features/{{feature_name.snakeCase()}}/domain/services/{{service_name.snakeCase()}}_service.dart';
+
+void main() {
+  late {{service_name.pascalCase()}}Service {{service_name.camelCase()}}Service;
+  setUp(() {
+    {{service_name.camelCase()}}Service = {{service_name.pascalCase()}}ServiceImpl();
+  });
+    //TODO: write tests for this service
+}
