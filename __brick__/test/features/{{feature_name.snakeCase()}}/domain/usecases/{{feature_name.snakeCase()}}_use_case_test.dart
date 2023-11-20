@@ -16,7 +16,7 @@ void main() {
   setUp(() {
     _mocked{{feature_name.pascalCase()}}Repository = Mocked{{feature_name.pascalCase()}}Repository();
     {{#with_service_layer}}_mocked{{service_name.pascalCase()}}Service = Mocked{{service_name.pascalCase()}}Service();{{/with_service_layer}}
-    _{{feature_name.snakeCase()}} = {{feature_name.pascalCase()}}UseCase(
+    _{{feature_name.camelCase()}} = {{feature_name.pascalCase()}}UseCase(
       _mocked{{feature_name.pascalCase()}}Repository,
       {{#with_service_layer}}_mocked{{service_name.pascalCase()}}Service,{{/with_service_layer}}
     );
