@@ -11,7 +11,7 @@ class Mocked{{feature_name.pascalCase()}}Repository extends Mock implements {{fe
 void main() {
   late {{feature_name.pascalCase()}}Repository _mocked{{feature_name.pascalCase()}}Repository;
   {{#with_service_layer}}late {{service_name.pascalCase()}}Service _mocked{{service_name.pascalCase()}}Service;{{/with_service_layer}}
-  late {{feature_name.pascalCase()}}UseCase _{{feature_name.snakeCase()}};
+  late {{feature_name.pascalCase()}}UseCase _{{feature_name.camelCase()}};
 
   setUp(() {
     _mocked{{feature_name.pascalCase()}}Repository = Mocked{{feature_name.pascalCase()}}Repository();
