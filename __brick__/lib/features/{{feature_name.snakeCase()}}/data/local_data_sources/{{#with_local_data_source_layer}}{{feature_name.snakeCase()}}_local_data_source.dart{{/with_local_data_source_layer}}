@@ -1,0 +1,6 @@
+import 'package:flutter_architecture/flutter_architecture.dart';
+import 'package:{{project_name.snakeCase()}}/features/{{feature_name.snakeCase()}}/domain/entities/{{entity_name.snakeCase()}}.dart';
+
+class {{feature_name.pascalCase()}}LocalDataSource extends BaseLocalDataSource<{{entity_name.pascalCase()}}>{
+  {{feature_name.pascalCase()}}LocalDataSource() : super(storageKey: '{{entity_name.pascalCase()}}StorageKey');
+}
