@@ -34,4 +34,8 @@ vars:
     default: Service
     prompt: What is your service name?
 
-  
+  with_local_data_source_layer:
+    type: boolean
+    description: Should generate local data source
+    default: false
+    prompt: Do you need a local data source?
