@@ -8,6 +8,9 @@ import 'package:{{project_name.snakeCase()}}/features/{{feature_name.snakeCase()
 import 'package:{{project_name.snakeCase()}}/features/{{feature_name.snakeCase()}}/data/services/{{service_name.snakeCase()}}_service_impl.dart';
 import 'package:{{project_name.snakeCase()}}/features/{{feature_name.snakeCase()}}/domain/services/{{service_name.snakeCase()}}_service.dart';
 {{/with_service_layer}}
+{{#with_local_data_source_layer}}
+import 'package:{{project_name.snakeCase()}}/features/{{feature_name.snakeCase()}}/data/local_data_sources/{{feature_name.snakeCase()}}_local_data_source.dart';
+{{/with_local_data_source_layer}}
 import 'package:{{project_name.snakeCase()}}/features/{{feature_name.snakeCase()}}/domain/repositories/{{feature_name.snakeCase()}}_repository.dart';
 import 'package:{{project_name.snakeCase()}}/features/{{feature_name.snakeCase()}}/domain/entities/{{entity_name.snakeCase()}}.dart';
 import 'package:{{project_name.snakeCase()}}/features/{{feature_name.snakeCase()}}/domain/usecases/{{feature_name.snakeCase()}}_use_case.dart';
@@ -18,7 +21,15 @@ final _{{feature_name.camelCase()}}RepositoryProvider = Provider<{{feature_name.
     {{feature_name.pascalCase()}}RepositoryImpl(
       ref.watch(apiClientProvider),
       ref.watch({{entity_name.camelCase()}}EntityMapperProvider),
+    {{#with_local_data_source_layer}}
+    ref.watch(_{{feature_name.camelCase()}}LocalDataSourceProvider),
+    {{/with_local_data_source_layer}}
     ));
+{{#with_local_data_source_layer}}
+final _{{feature_name.camelCase()}}LocalDataSourceProvider = Provider<{{feature_name.pascalCase()}}LocalDataSource>((ref) =>
+    {{feature_name.pascalCase()}}LocalDataSource(),
+  );
+{{/with_local_data_source_layer}}
 
 {{#with_service_layer}}
 // ******* SERVICE LAYER *********
